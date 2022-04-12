@@ -86,7 +86,7 @@ public struct AlertBubbleView14: View {
     let title: LocalizedStringKey
     let subtitle: LocalizedStringKey?
     let systemImage: String?
-    let backgroundColor: Color
+    let background: Color
     let animation: Animation
     let deadline: DispatchTime
 
@@ -101,7 +101,7 @@ public struct AlertBubbleView14: View {
         title: LocalizedStringKey,
         subtitle: LocalizedStringKey?,
         systemImage: String?,
-        backgroundColor: Color,
+        background: Color,
         animation: Animation = .spring(),
         deadline: DispatchTime = .now() + 3
     ) {
@@ -109,7 +109,7 @@ public struct AlertBubbleView14: View {
         self.title = title
         self.subtitle = subtitle
         self.systemImage = systemImage
-        self.backgroundColor = backgroundColor
+        self.background = background
         self.animation = animation
         self.deadline = deadline
     }
@@ -131,7 +131,7 @@ public struct AlertBubbleView14: View {
                 }
                 .padding(.vertical, 7)
                 .padding(.horizontal, 40)
-                .background(backgroundColor)
+                .background(background)
                 .clipShape(RoundedRectangle(cornerRadius: 99, style: .continuous))
                 
                 if let systemImage = systemImage {

@@ -120,6 +120,32 @@ ProgressView("Progress", value: 69, total: 420)
 		)
 	)
 ```
+### 🔹 Alert bubble view
+```swift
+@State var showing = false
+    
+var body: some View {
+	ZStack {
+		// iOS 14 - Color for background 
+		AlertBubbleView14(
+			showing: $showing, 
+			title: "Title", 
+			subtitle: "Subtitle", 
+			systemImage: "heart.fill", 
+			background: .red
+		)
+
+		// iOS 15 - ShapeStyle for background
+		AlertBubbleView(
+			showing: $showing, 
+			title: "Title", 
+			subtitle: "Subtitle", 
+			systemImage: "heart.fill", 
+			background: .ultraThinMaterial
+		)
+	}
+}
+```
 ### 🔹 Fully native emoji picker
 ```swift
 @State var emoji = "🎁"
