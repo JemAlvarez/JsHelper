@@ -77,6 +77,13 @@ error.printError(for: "Your label")
 // Localized error description
 // Full error
 ```
+### 🔺 StoreKit localized price string
+```swift
+// iOS 15 Product
+yourProduct.localizedPrice ?? "optional string"
+// SKProduct
+yourSKProduct.localizedPrice ?? "optional string"
+```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
 For detailed usage information on [Onboarder](https://github.com/JemAlvarez/onboarder), checkout the the [Onboarder](https://github.com/JemAlvarez/onboarder) repo [here](https://github.com/JemAlvarez/onboarder).
