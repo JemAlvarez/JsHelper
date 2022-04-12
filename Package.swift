@@ -12,6 +12,10 @@ let package = Package(
         .package(url: "https://github.com/JemAlvarez/onboarder", branch: "master")
     ],
     targets: [
-        .target(name: "JsHelper", dependencies: [.product(name: "Onboarder", package: "onboarder")]),
+        .target(
+            name: "JsHelper",
+            dependencies: [.product(name: "Onboarder", package: "onboarder")],
+            resources: [.process("Docs/SwiftLint.md"), .process("Docs/Fonts.md")]
+        ),
     ]
 )
