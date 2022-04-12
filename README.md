@@ -22,23 +22,17 @@ import Onboarder
 ## UIKit
 ### Add constraints on all anchors for a view
 ```swift 
-// 
-yourView.addConstraints(equalTo: parentView)
+yourSubview.addConstraints(equalTo: yourParentView)
 ```
-### Add constraints on specified anchors with optional constant for a view
-```swift 
-parentView.addConstraints(for: yourSubview, with: [
-	Constraint(constraint: .top, constant: 50),
-	Constraint(constraint: .leading)
-])
-```
-### 
+### Setup UIKit with no Storyboards
+1. Add the following code in SceneDelegate
+2. Follow steps in `makeWindow` function documnetation
 ```swift
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if let window = makeWindow(for: scene, with: ViewController()) {
-            self.window = window
-        }
-    }
+	if let window = makeWindow(for: scene, with: ViewController()) {
+		self.window = window
+	}
+}
 ```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
