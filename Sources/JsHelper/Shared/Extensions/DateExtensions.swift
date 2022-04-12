@@ -15,11 +15,11 @@ public extension Date {
     
     //MARK: - Get String from Date
     /// Get date string with date format
-    func getString(for format: String) -> String {
+    func getString(for format: Formats) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = format
+        formatter.dateFormat = format.rawValue
         formatter.locale = .current
-        formatter.setLocalizedDateFormatFromTemplate(format)
+        formatter.setLocalizedDateFormatFromTemplate(format.rawValue)
         return formatter.string(from: self)
     }
 }
