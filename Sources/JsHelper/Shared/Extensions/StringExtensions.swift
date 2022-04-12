@@ -14,8 +14,8 @@ public extension String {
     }
     
     //MARK: - Is emoji
-    /// Whether a string contains an emoji or not
     @available (iOS 10.2, *)
+    /// Whether a string contains an emoji or not
     func hasEmoji() -> Bool {
         guard let firstScalar = unicodeScalars.first else { return false }
         return firstScalar.properties.isEmoji && firstScalar.value > 0x238C
