@@ -222,6 +222,10 @@ yourSKProduct.localizedPrice ?? "optional string"
 ```swift
 UserDefaults.standard.reset(for: ["key1", "key2"])
 ```
+### 🔺 Load local JSON Data
+```swift
+let data = Bundle.main.loadLocalJSON(with: "fileName")
+```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
 For detailed usage information on [Onboarder](https://github.com/JemAlvarez/onboarder), checkout the the [Onboarder](https://github.com/JemAlvarez/onboarder) repo [here](https://github.com/JemAlvarez/onboarder).
