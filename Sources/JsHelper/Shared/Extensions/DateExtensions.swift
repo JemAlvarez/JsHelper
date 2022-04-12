@@ -22,4 +22,13 @@ public extension Date {
         formatter.setLocalizedDateFormatFromTemplate(format.rawValue)
         return formatter.string(from: self)
     }
+    
+    /// Get date string with string format
+    func getString(for format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.locale = .current
+        formatter.setLocalizedDateFormatFromTemplate(format)
+        return formatter.string(from: self)
+    }
 }

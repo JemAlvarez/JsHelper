@@ -57,6 +57,12 @@ Color.blue.getHexString()
 Color(hex: "#000000")
 ```
 
+## Shared
+### Date to string with format
+```swift
+Date().getString(for: .commaWithWeekday)
+```
+
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
 For detailed usage information on [Onboarder](https://github.com/JemAlvarez/onboarder), checkout the the [Onboarder](https://github.com/JemAlvarez/onboarder) repo [here](https://github.com/JemAlvarez/onboarder).
 
