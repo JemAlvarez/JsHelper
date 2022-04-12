@@ -88,6 +88,13 @@ Button("Open Link") {
 yourView
 	.cornerRadius(50, corners: [.bottomLeft, .topRight])
 ```
+### 🔹 Get View size (width & height)
+```swift
+yourView
+	.getViewSize { width, height in
+		// Now you can add your width and height to your state and use it
+	}
+```
 ### 🔹 Haptic feedback
 ```swift
 Button("Haptic") {
