@@ -60,7 +60,10 @@ Color(hex: "#000000")
 ## Shared
 ### Date to string with format
 ```swift
+// Preset formats
 Date().getString(for: .commaWithWeekday)
+// Or custom formats
+Date().getString(for: "MMMM yyyy")
 ```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
