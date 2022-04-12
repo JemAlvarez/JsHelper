@@ -6,10 +6,7 @@ import PackageDescription
 let package = Package(
     name: "JsHelper",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "JsHelper",
-            targets: ["JsHelper"]),
+        .library( name: "JsHelper", targets: ["JsHelper"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
