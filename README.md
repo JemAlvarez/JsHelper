@@ -108,6 +108,18 @@ Button("Haptic") {
 	haptic(.heavy)
 }
 ```
+### 🔹 Guage Progress View
+```swift
+ProgressView("Progress", value: 69, total: 420)
+	.progressViewStyle(
+		GaugeProgressViewStyle(
+			strokeColor: .red, 
+			strokeWidth: 15, 
+			size: (50, 50)
+			// backgroundColor: Color? = nil
+		)
+	)
+```
 ### 🔹 ImagePicker
 ```swift
 // UIImage picked from user
