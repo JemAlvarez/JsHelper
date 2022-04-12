@@ -61,13 +61,23 @@ Color(hex: "#000000")
 ### 🔺 Date to string with format
 ```swift
 // Preset formats
-Date().getString(for: .commaWithWeekday)
+Date().getString(with: .commaWithWeekday)
 // Or custom formats
-Date().getString(for: "MMMM yyyy")
+Date().getString(with: "MMMM yyyy")
 ```
 ### 🔺 Number of day to another date
 ```swift
 Date().numberOfDays(until: anotherDate)
+```
+### 🔺 String to Date
+```swift
+"your date in string".toDate(with: "MM/dd/yyyy")
+// Or use the Date.Formats
+"your date in string".toDate(with: Date.Formats.slashes.rawValue)
+```
+### 🔺 Check if string contains emoji
+```swift
+"emoji 😄".hasEmoji()
 ```
 ### 🔺 Print Error
 ```swift

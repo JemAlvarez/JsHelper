@@ -39,7 +39,7 @@ public extension Date {
     
     //MARK: - Get String from Date
     /// Get date string with date format
-    func getString(for format: Formats) -> String {
+    func getString(with format: Formats) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format.rawValue
         formatter.locale = .current
@@ -48,7 +48,7 @@ public extension Date {
     }
     
     /// Get date string with string format
-    func getString(for format: String) -> String {
+    func getString(with format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         formatter.locale = .current
