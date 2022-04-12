@@ -120,6 +120,14 @@ ProgressView("Progress", value: 69, total: 420)
 		)
 	)
 ```
+### 🔹 Fully native emoji picker
+```swift
+@State var emoji = "🎁"
+    
+var body: some View {
+	EmojiPickerView(emoji: $emoji)
+}
+```
 ### 🔹 ImagePicker
 ```swift
 // UIImage picked from user
