@@ -7,3 +7,17 @@ DerivedData/
 .swiftpm/config/registries.json
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
+
+
+/.previous-build
+*~
+\#*
+.\#*
+.*.sw[nop]
+*.xcscmblueprint
+/default.profraw
+.swiftpm
+Package.resolved
+/build
+*.pyc
+.docc-build
