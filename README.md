@@ -120,7 +120,7 @@ ProgressView("Progress", value: 69, total: 420)
 		)
 	)
 ```
-### 🔹 Alert bubble view
+### 🔹 Alert bubble view (localizable)
 ```swift
 @State var showing = false
     
@@ -225,6 +225,20 @@ UserDefaults.standard.reset(for: ["key1", "key2"])
 ### 🔺 Load local JSON Data
 ```swift
 let data = Bundle.main.loadLocalJSON(with: "fileName")
+```
+### 🔺 Request User notifications
+```swift
+UNUserNotificationCenter.requestPermission(for: [.alert, .badge, .sound]) {
+	// Handle success
+}
+```
+### 🔺 Bring back user notification
+```swift
+.onAppear {
+	// Triggers a notification 14 (your amount of days) days from the last time the user opened the app
+	// With your given notification content
+	UNUserNotificationCenter.bringBackUser(with: notificationContent, in: 14)
+}
 ```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
