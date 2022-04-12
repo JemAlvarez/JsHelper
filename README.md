@@ -5,7 +5,10 @@
 ## Installation
 
 1. In XCode 12 go to `File -> Swift Packages -> Add Package Dependency` or in XCode 13 `File -> Add Packages`
-2. Paste in the repo's [url](https://github.com/JemAlvarez/JsHelper`): ```https://github.com/JemAlvarez/JsHelper``` and select by version.
+2. Paste in the repo's [url](https://github.com/JemAlvarez/JsHelper`): 
+```
+https://github.com/JemAlvarez/JsHelper
+```
 
 
 
