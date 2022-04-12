@@ -2,7 +2,7 @@
 
 import Foundation
 
-extension Bundle {
+public extension Bundle {
     /// Load local json file
     ///
     /// - Returns: Optional Data
