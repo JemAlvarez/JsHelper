@@ -62,6 +62,36 @@ if let window = UIApplication.shared.currentUIWindow() {
 	// handle ui window
 }
 ```
+### 🔹 Present Share Sheet
+```swift
+Button("Present Sheet") {
+	presentShareSheet(with: ["Strings", Images, URLs])
+}
+```
+### 🔹 Request AppStore Review
+```swift
+Button("Request Review") {
+	requestReview()
+}
+```
+### 🔹 Open Link
+```swift
+@Environment(\.openURL) var openURL
+
+Button("Open Link") {
+	// Takes in an `OpenURLAction` doesn't have to be `openURL`
+	openLink("https://apple.com", with: openURL)
+}
+```
+### 🔹 Haptic feedback
+```swift
+Button("Haptic") {
+	// Default HapticStyle is `soft`
+	haptic()
+	// Other HapticStyles: light, medium, heavy, rigid, soft, success, error, warning, selection
+	haptic(.heavy)
+}
+```
 
 ## Shared
 ### 🔺 Date to string with format
