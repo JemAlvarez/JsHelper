@@ -65,6 +65,7 @@ public extension View {
         clipShape(RoundedCornerShape(radius: radius, corners: corners) )
     }
     
+    @available(iOS 14, *)
     /// Get View size
     /// - Returns: some View
     ///
