@@ -83,6 +83,11 @@ Button("Open Link") {
 	openLink("https://apple.com", with: openURL)
 }
 ```
+### 🔹 Give view radius on custom corners
+```swift
+yourView
+	.cornerRadius(50, corners: [.bottomLeft, .topRight])
+```
 ### 🔹 Haptic feedback
 ```swift
 Button("Haptic") {

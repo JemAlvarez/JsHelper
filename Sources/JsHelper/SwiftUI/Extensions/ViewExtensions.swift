@@ -59,4 +59,31 @@ public extension View {
             selectionGenerator.selectionChanged()
         }
     }
+    
+    /// Give view radius on custom corners
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCornerShape(radius: radius, corners: corners) )
+    }
+    
+    /// Get View size
+    /// - Returns: some View
+    ///
+    /// - Note: Callback with Width and Height values of the view
+    func getViewSize(completion: @escaping ((width: CGFloat, height: CGFloat)) -> Void) -> some View {
+        self.background(
+            GeometryReader { geo in
+                Color.clear
+                    .onChange(of: geo.size.width) { newValue in
+                        completion((newValue, geo.size.height))
+                    }
+                    .onChange(of: geo.size.height, perform: { newValue in
+                        completion((geo.size.width, newValue))
+                    })
+                    .onAppear {
+                        completion((geo.size.width, geo.size.height))
+                    }
+            }
+            .frame(maxHeight: .infinity)
+        )
+    }
 }
