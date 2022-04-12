@@ -58,12 +58,24 @@ Color(hex: "#000000")
 ```
 
 ## Shared
-### Date to string with format
+### 🔺 Date to string with format
 ```swift
 // Preset formats
 Date().getString(for: .commaWithWeekday)
 // Or custom formats
 Date().getString(for: "MMMM yyyy")
+```
+### 🔺 Number of day to another date
+```swift
+Date().numberOfDays(until: anotherDate)
+```
+### 🔺 Print Error
+```swift
+error.printError(for: "Your label")
+// Output
+// Error occurred: Your label
+// Localized error description
+// Full error
 ```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
@@ -82,6 +94,10 @@ Default values for the following:
 > URL - Default unwrapped url
 ```swift
 URL(string: "Invalid URL") ?? .defaultURL
+```
+> Date - Current values (day, month, year, hour, min, etc.)
+```swift
+Date.currentYear
 ```
 
 ## Docs
