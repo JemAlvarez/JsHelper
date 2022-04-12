@@ -172,7 +172,8 @@ Date.currentYear
 ## Docs
 * [SwiftLint.md](/Sources/JsHelper/Docs/SwiftLint.md) file has steps on how to setup SwiftLint for more information, [here](https://github.com/realm/SwiftLint).
 * [Fonts.md](/Sources/JsHelper/Docs/Fonts.md) file has a table of the predefined font sizes
-* [NavigatoinControllerPopGesture.md](/Sources/JsHelper/Docs/NavigatoinControllerPopGesture.md) shows hot to bring back pop gesture after hiding navigation back button
+* [GitIgnore.md](/Sources/JsHelper/Docs/GitIgnore.md) file includes a files to ignore in XCode projects
+* [NavigationControllerPopGesture](/Sources/JsHelper/Docs/NavigationControllerPopGesture) shows hot to bring back pop gesture after hiding navigation back button
 
 ## Meta
 

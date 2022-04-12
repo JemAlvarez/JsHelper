@@ -18,7 +18,8 @@ let package = Package(
             resources: [
                 .process("Docs/SwiftLint.md"),
                 .process("Docs/Fonts.md"),
-                .process("Docs/NavigatoinControllerPopGesture.md")
+                .process("Docs/NavigationControllerPopGesture.md"),
+                .process("Docs/GitIgnore.md")
             ]
         ),
     ]
