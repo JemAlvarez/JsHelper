@@ -3,46 +3,42 @@
 import UIKit
 
 public extension UIView {
-    func addConstrained(subview: UIView) {
-        // Add onboarding view to viewController
-        addSubview(subview)
+    func addConstraints(equalTo view: UIView) {
         // Auto Resizing Masks -> Constraints
-        subview.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
         // Add onboarding view constraints
-        subview.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        subview.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        subview.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        subview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    func addConstrained(subview: UIView, with constraints: [Constraint]) {
-        // Add onboarding view to viewController
-        addSubview(subview)
+    func addConstraints(with constraints: [Constraint]) {
         // Auto Resizing Masks -> Constraints
-        subview.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
         // For each constraint, if it has a constant, add constant constraint, otherwise add anchor constraint
         for constraint in constraints {
             if let constant  = constraint.constant {
                 switch constraint.constraint {
                 case .top:
-                    subview.topAnchor.constraint(equalTo: topAnchor, constant: constant).isActive = true
+                    self.topAnchor.constraint(equalTo: constraint.parentView.topAnchor, constant: constant).isActive = true
                 case .bottom:
-                    subview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: constant).isActive = true
+                    self.bottomAnchor.constraint(equalTo: constraint.parentView.bottomAnchor, constant: constant).isActive = true
                 case .leading:
-                    subview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: constant).isActive = true
+                    self.leadingAnchor.constraint(equalTo: constraint.parentView.leadingAnchor, constant: constant).isActive = true
                 case .trailing:
-                    subview.trailingAnchor.constraint(equalTo: trailingAnchor, constant: constant).isActive = true
+                    self.trailingAnchor.constraint(equalTo: constraint.parentView.trailingAnchor, constant: constant).isActive = true
                 }
             } else {
                 switch constraint.constraint {
                 case .top:
-                    subview.topAnchor.constraint(equalTo: topAnchor).isActive = true
+                    self.topAnchor.constraint(equalTo: constraint.parentView.topAnchor).isActive = true
                 case .bottom:
-                    subview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+                    self.bottomAnchor.constraint(equalTo: constraint.parentView.bottomAnchor).isActive = true
                 case .leading:
-                    subview.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+                    self.leadingAnchor.constraint(equalTo: constraint.parentView.leadingAnchor).isActive = true
                 case .trailing:
-                    subview.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+                    self.trailingAnchor.constraint(equalTo: constraint.parentView.trailingAnchor).isActive = true
                 }
             }
         }
