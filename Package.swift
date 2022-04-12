@@ -15,7 +15,11 @@ let package = Package(
         .target(
             name: "JsHelper",
             dependencies: [.product(name: "Onboarder", package: "onboarder")],
-            resources: [.process("Docs/SwiftLint.md"), .process("Docs/Fonts.md")]
+            resources: [
+                .process("Docs/SwiftLint.md"),
+                .process("Docs/Fonts.md"),
+                .process("Docs/NavigatoinControllerPopGesture.md")
+            ]
         ),
     ]
 )
