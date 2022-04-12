@@ -1,6 +1,10 @@
 # Onboarder
 > Create a beautiful Onabording for your iOS/iPadOS apps in just a few minutes.
 
+Legend: 
+* 🔸 UIKit
+* 🔹 SwiftUI
+* 🔺 Shared
 
 ## Installation
 
@@ -102,6 +106,32 @@ Button("Haptic") {
 	haptic()
 	// Other HapticStyles: light, medium, heavy, rigid, soft, success, error, warning, selection
 	haptic(.heavy)
+}
+```
+### 🔹 ImagePicker
+```swift
+// UIImage picked from user
+@State var image: UIImage? = nil
+// Presenting Image Picker
+@State var showingPicker = false
+
+var body: some View {
+	VStack{
+		// unwrap image and display
+		if let image = image {
+			Image(uiImage: image)
+				.resizable()
+		}
+            
+		// show image picker
+		Button("Pick photo") {
+			showingPicker.toggle()
+		}
+	}
+	// image picker sheet
+	.sheet(isPresented: $showingPicker) {
+		ImagePickerView(image: $image)
+	}
 }
 ```
 
