@@ -15,7 +15,7 @@ brew install swiftlint
 ## Usage
 Export PATH only need if XCode can't detect path due to `brew` on Apple Silicon 
 ```
-// export PATH="$PATH:/opt/homebrew/bin"
+# export PATH="$PATH:/opt/homebrew/bin"
 if which swiftlint > /dev/null; then
   swiftlint
 else
