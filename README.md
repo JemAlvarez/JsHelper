@@ -250,7 +250,12 @@ UNUserNotificationCenter.requestPermission(for: [.alert, .badge, .sound]) {
 ```
 ### 🔺 Fetch data from URL
 ```swift
+// iOS 15
 let urlData: Data? = await URL(string: "yourURLEndpoint")!.requestData()
+// Pre-iOS 15
+let urlData: Data? = URL(string: "yourURLEndpoint")!.requestData { data in
+    // Use your data
+}
 ```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)

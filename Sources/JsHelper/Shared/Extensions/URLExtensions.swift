@@ -14,28 +14,32 @@ public extension URL {
         
         return fileContainer.appendingPathComponent("\(databaseName).sqlite")
     }
-    
-    @available(iOS 13, *)
+
+    @available(iOS 15.0, *)
     /// Returns optional data from url
     func requestData() async -> Data? {
         // url
         let url = self
         // data
         var outputData: Data? = nil
-        
-        if #available(iOS 15.0, *) {
-            do {
-                let data = try await URLSession.shared.data(from: url)
-                outputData = data.0
-            } catch {
-                error.printError(for: "Fetching data from \(url.description)")
-            }
-        } else {
-            URLSession.shared.dataTask(with: url) { data, res, err in
-                outputData = data
-            }.resume()
+
+        do {
+            let data = try await URLSession.shared.data(from: url)
+            outputData = data.0
+        } catch {
+            error.printError(for: "Fetching data from \(url.description)")
         }
-        
+
         return outputData
+    }
+
+    @available(iOS 14, *)
+    func requestData(completion: @escaping (Data?) -> Void) {
+        // url
+        let url = self
+
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            completion(data)
+        }.resume()
     }
 }
