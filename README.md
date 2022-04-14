@@ -49,6 +49,14 @@ UIColor.blue.getHexString()
 ```swift
 UIColor(hex: "#000000")
 ```
+### 🔸 PropertyWrapper for `translatesAutoresizingMaskIntoConstraints`
+```swift
+// From 
+var view = UIView()
+view.translatesAutoresizingMaskIntoConstraints = false
+// To
+@TAMIC var view = UIView()
+```
 
 ## SwiftUI
 ### 🔹 Get hex string from Color
