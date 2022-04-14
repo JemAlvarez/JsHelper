@@ -33,7 +33,6 @@ public extension URL {
         return outputData
     }
 
-    @available(iOS 14, *)
     func requestData(completion: @escaping (Data?) -> Void) {
         // url
         let url = self
