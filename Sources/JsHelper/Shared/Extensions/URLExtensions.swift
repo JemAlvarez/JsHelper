@@ -31,9 +31,9 @@ public extension URL {
                 error.printError(for: "Fetching data from \(url.description)")
             }
         } else {
-            let _ = URLSession.shared.dataTask(with: url) { data, res, err in
+            URLSession.shared.dataTask(with: url) { data, res, err in
                 outputData = data
-            }
+            }.resume()
         }
         
         return outputData
