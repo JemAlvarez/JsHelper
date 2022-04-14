@@ -13,7 +13,7 @@ brew install swiftlint
 5. Copy/Paste code bellow
 
 ## Usage
-Export PATH only need if XCode can't detect path due to `brew` on Apple Silicon 
+> Export PATH only need if XCode can't detect path due to `brew` on Apple Silicon 
 ```
 # export PATH="$PATH:/opt/homebrew/bin"
 if which swiftlint > /dev/null; then
@@ -21,4 +21,15 @@ if which swiftlint > /dev/null; then
 else
   echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
 fi
+```
+
+## Config file
+> My in progress `.swiftlint.yml` file
+```
+disabled_rules:
+- identifier_name
+- trailing_whitespace
+- line_length
+
+reporter: "xcode"
 ```
