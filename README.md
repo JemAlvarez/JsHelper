@@ -248,6 +248,10 @@ UNUserNotificationCenter.requestPermission(for: [.alert, .badge, .sound]) {
 	UNUserNotificationCenter.bringBackUser(with: notificationContent, in: 14)
 }
 ```
+### 🔺 Fetch data from URL
+```swift
+let urlData: Data? = await URL(string: "yourURLEndpoint")!.requestData()
+```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
 For detailed usage information on [Onboarder](https://github.com/JemAlvarez/onboarder), checkout the the [Onboarder](https://github.com/JemAlvarez/onboarder) repo [here](https://github.com/JemAlvarez/onboarder).
