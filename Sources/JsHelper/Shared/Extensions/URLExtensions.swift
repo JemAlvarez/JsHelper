@@ -15,6 +15,41 @@ public extension URL {
         return fileContainer.appendingPathComponent("\(databaseName).sqlite")
     }
 
+    // MARK: - Request Data and Decode
+    @available(iOS 15.0, *)
+    func requestDataAndDecode<T: Decodable>() async -> T? {
+        // url
+        let url = self
+
+        do {
+            let data = try await URLSession.shared.data(from: url)
+            let decodedData = try JSONDecoder().decode(T.self, from: data.0)
+            return decodedData
+        } catch {
+            error.printError(for: "Fetching/Decoding data from \(url.description)")
+        }
+
+        return nil
+    }
+
+    func requestDataAndDecode<T: Decodable>(completion: @escaping (T) -> Void) {
+        // url
+        let url = self
+
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else { return }
+
+            do {
+                let decodedData = try JSONDecoder().decode(T.self, from: data)
+                completion(decodedData)
+            } catch {
+                error.printError(for: "Fetching/Decoding data from \(url.description)")
+            }
+
+        }.resume()
+    }
+
+    // MARK: - Request Data
     @available(iOS 15.0, *)
     /// Returns optional data from url
     func requestData() async -> Data? {

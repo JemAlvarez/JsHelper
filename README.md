@@ -257,6 +257,15 @@ let urlData: Data? = URL(string: "yourURLEndpoint")!.requestData { data in
     // Use your data
 }
 ```
+### 🔺 Fetch data from URL and Decode
+```swift
+// iOS 15
+let DecodedURLData: YourType? = await URL(string: "yourURLEndpoint")!.requestDataAndDecode()
+// Pre-iOS 15
+URL(string: "yourURLEndpoint")!.requestDataAndDecode { (data: YourType) in
+    // Use your data
+}
+```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
 For detailed usage information on [Onboarder](https://github.com/JemAlvarez/onboarder), checkout the the [Onboarder](https://github.com/JemAlvarez/onboarder) repo [here](https://github.com/JemAlvarez/onboarder).
