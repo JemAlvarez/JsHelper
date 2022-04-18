@@ -32,6 +32,29 @@ public extension URL {
         return nil
     }
 
+    @available(iOS 13, *)
+    func requestDataAndDecodeAsync<T: Decodable>() async -> T? {
+        // url
+        let url = self
+
+        let decodedData: T? = await withCheckedContinuation { continuation in
+            URLSession.shared.dataTask(with: url) { data, _, _ in
+                guard let data = data else { return }
+
+                do {
+                    let decodedData = try JSONDecoder().decode(T.self, from: data)
+                    continuation.resume(returning: decodedData)
+                } catch {
+                    error.printError(for: "Fetching/Decoding data from \(url.description)")
+                    continuation.resume(returning: nil)
+                }
+
+            }.resume()
+        }
+
+        return decodedData
+    }
+
     func requestDataAndDecode<T: Decodable>(completion: @escaping (T) -> Void) {
         // url
         let url = self
@@ -51,7 +74,6 @@ public extension URL {
 
     // MARK: - Request Data
     @available(iOS 15.0, *)
-    /// Returns optional data from url
     func requestData() async -> Data? {
         // url
         let url = self
@@ -66,6 +88,20 @@ public extension URL {
         }
 
         return outputData
+    }
+
+    @available(iOS 13, *)
+    func requestDataAsync() async -> Data? {
+        // url
+        let url = self
+
+        let data: Data? = await withCheckedContinuation { continuation in
+            URLSession.shared.dataTask(with: url) { data, _, _ in
+                continuation.resume(returning: data)
+            }.resume()
+        }
+
+        return data
     }
 
     func requestData(completion: @escaping (Data?) -> Void) {
