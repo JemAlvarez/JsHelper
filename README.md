@@ -250,19 +250,19 @@ UNUserNotificationCenter.requestPermission(for: [.alert, .badge, .sound]) {
 ```
 ### 🔺 Fetch data from URL
 ```swift
-// iOS 15
+// iOS 13+
 let urlData: Data? = await URL(string: "yourURLEndpoint")!.requestData()
-// Pre-iOS 15
+// Pre-iOS 13
 let urlData: Data? = URL(string: "yourURLEndpoint")!.requestData { data in
     // Use your data
 }
 ```
 ### 🔺 Fetch data from URL and Decode
 ```swift
-// iOS 15
-let DecodedURLData: YourType? = await URL(string: "yourURLEndpoint")!.requestDataAndDecode()
-// Pre-iOS 15
-URL(string: "yourURLEndpoint")!.requestDataAndDecode { (data: YourType) in
+// iOS 13+
+let decodedURLData: YourType = await URL(string: "yourURLEndpoint")!.requestDataAndDecode()
+// Pre-iOS 13
+URL(string: "yourURLEndpoint")!.requestDataAndDecode { (decodedData: YourType) in
     // Use your data
 }
 ```

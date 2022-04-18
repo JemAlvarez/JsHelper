@@ -16,28 +16,28 @@ public extension URL {
     }
 
     // MARK: - Request Data and Decode
-    @available(iOS 15.0, *)
-    func requestDataAndDecode<T: Decodable>() async -> T? {
-        // url
-        let url = self
-
-        do {
-            let data = try await URLSession.shared.data(from: url)
-            let decodedData = try JSONDecoder().decode(T.self, from: data.0)
-            return decodedData
-        } catch {
-            error.printError(for: "Fetching/Decoding data from \(url.description)")
-        }
-
-        return nil
-    }
+//    @available(iOS 15.0, *)
+//    func requestDataAndDecode<T: Decodable>() async -> T? {
+//        // url
+//        let url = self
+//
+//        do {
+//            let data = try await URLSession.shared.data(from: url)
+//            let decodedData = try JSONDecoder().decode(T.self, from: data.0)
+//            return decodedData
+//        } catch {
+//            error.printError(for: "Fetching/Decoding data from \(url.description)")
+//        }
+//
+//        return nil
+//    }
 
     @available(iOS 13, *)
-    func requestDataAndDecodeAsync<T: Decodable>() async -> T? {
+    func requestDataAndDecode<T: Decodable>() async -> T {
         // url
         let url = self
 
-        let decodedData: T? = await withCheckedContinuation { continuation in
+        let decodedData: T = await withCheckedContinuation { continuation in
             URLSession.shared.dataTask(with: url) { data, _, _ in
                 guard let data = data else { return }
 
@@ -46,7 +46,6 @@ public extension URL {
                     continuation.resume(returning: decodedData)
                 } catch {
                     error.printError(for: "Fetching/Decoding data from \(url.description)")
-                    continuation.resume(returning: nil)
                 }
 
             }.resume()
@@ -73,25 +72,25 @@ public extension URL {
     }
 
     // MARK: - Request Data
-    @available(iOS 15.0, *)
-    func requestData() async -> Data? {
-        // url
-        let url = self
-        // data
-        var outputData: Data? = nil
-
-        do {
-            let data = try await URLSession.shared.data(from: url)
-            outputData = data.0
-        } catch {
-            error.printError(for: "Fetching data from \(url.description)")
-        }
-
-        return outputData
-    }
+//    @available(iOS 15.0, *)
+//    func requestData() async -> Data? {
+//        // url
+//        let url = self
+//        // data
+//        var outputData: Data? = nil
+//
+//        do {
+//            let data = try await URLSession.shared.data(from: url)
+//            outputData = data.0
+//        } catch {
+//            error.printError(for: "Fetching data from \(url.description)")
+//        }
+//
+//        return outputData
+//    }
 
     @available(iOS 13, *)
-    func requestDataAsync() async -> Data? {
+    func requestData() async -> Data? {
         // url
         let url = self
 
