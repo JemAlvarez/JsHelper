@@ -27,7 +27,10 @@ import Onboarder
 ## UIKit
 ### 🔸 Add constraints on all anchors for a view
 ```swift 
+// Without margins
 yourSubview.addConstraints(equalTo: yourParentView)
+// With margins
+yourSubview.addConstraintsWithMargins(equalTo: yourParentView)
 ```
 ### 🔸 Setup UIKit with no Storyboards
 1. Add the following code in SceneDelegate
