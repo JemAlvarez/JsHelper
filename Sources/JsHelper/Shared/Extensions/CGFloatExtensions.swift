@@ -16,4 +16,9 @@ public extension CGFloat {
     
     // Corner Radius
     static let cornerRadius: CGFloat = 15
+
+    // Opacity
+    static let opacityHigh: CGFloat = 0.8
+    static let opacityMedium: CGFloat = 0.5
+    static let opacityLow: CGFloat = 0.35
 }
