@@ -237,6 +237,10 @@ UserDefaults.standard.reset(for: ["key1", "key2"])
 ```swift
 let data = Bundle.main.loadLocalJSON(with: "fileName")
 ```
+### 🔺 Get url for AppStore rate/review
+```swift
+URL(string: .rateOnAppStoreLink(with: "yourAppId"))
+```
 ### 🔺 Request User notifications
 ```swift
 UNUserNotificationCenter.requestPermission(for: [.alert, .badge, .sound]) {

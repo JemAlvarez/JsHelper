@@ -20,4 +20,8 @@ public extension String {
         guard let firstScalar = unicodeScalars.first else { return false }
         return firstScalar.properties.isEmoji && firstScalar.value > 0x238C
     }
+
+    static func rateOnAppStoreLink(with appId: String) -> String {
+        return "https://itunes.apple.com/app/id\(appId)?action=write-review"
+    }
 }
