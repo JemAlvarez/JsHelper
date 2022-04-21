@@ -4,6 +4,7 @@ import SwiftUI
 import StoreKit
 
 public extension UIApplication {
+    // current window
     @available(iOS 13, *)
     func currentUIWindow() -> UIWindow? {
         let connectedScenes = UIApplication.shared.connectedScenes
@@ -18,11 +19,13 @@ public extension UIApplication {
         return window
     }
 
+    // current window scene
     @available(iOS 13, *)
     func currentUIWindowScene() -> UIWindowScene? {
         return UIApplication.shared.connectedScenes.first as? UIWindowScene
     }
 
+    // request review
     @available(iOS 13, *)
     static func requestStoreReview() {
         if #available(iOS 14.0, *) {

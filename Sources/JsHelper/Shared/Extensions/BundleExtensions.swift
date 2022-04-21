@@ -22,4 +22,11 @@ public extension Bundle {
         
         return nil
     }
+
+    // App Info
+    var appBuild: String { getInfo("CFBundleVersion") }
+    var appVersionLong: String { getInfo("CFBundleShortVersionString") }
+    var appVersionShort: String { getInfo("CFBundleShortVersion") }
+
+    fileprivate func getInfo(_ str: String) -> String { infoDictionary?[str] as? String ?? "-" }
 }

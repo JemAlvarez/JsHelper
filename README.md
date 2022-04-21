@@ -273,6 +273,12 @@ URL(string: "yourURLEndpoint")!.requestDataAndDecode { (decodedData: YourType) i
 ```swift
 UIApplication.requestStoreReview()
 ```
+### 🔺 Get app Info
+```swift
+Bundle.main.appBuild
+Bundle.main.appVersionLong
+Bundle.main.appVersionShort
+```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
 For detailed usage information on [Onboarder](https://github.com/JemAlvarez/onboarder), checkout the the [Onboarder](https://github.com/JemAlvarez/onboarder) repo [here](https://github.com/JemAlvarez/onboarder).
