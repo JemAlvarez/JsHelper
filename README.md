@@ -269,6 +269,10 @@ URL(string: "yourURLEndpoint")!.requestDataAndDecode { (decodedData: YourType) i
     // Use your data
 }
 ```
+### 🔺 Request AppStore review
+```swift
+UIApplication.requestStoreReview()
+```
 
 ## [Onboarder](https://github.com/JemAlvarez/onboarder)
 For detailed usage information on [Onboarder](https://github.com/JemAlvarez/onboarder), checkout the the [Onboarder](https://github.com/JemAlvarez/onboarder) repo [here](https://github.com/JemAlvarez/onboarder).
