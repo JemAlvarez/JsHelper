@@ -21,4 +21,7 @@ public extension CGFloat {
     static let opacityHigh: CGFloat = 0.8
     static let opacityMedium: CGFloat = 0.5
     static let opacityLow: CGFloat = 0.35
+
+    // Padding
+    static let padding: CGFloat = 16
 }
