@@ -5,16 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "JsHelper",
+    platforms: [.iOS(.v11)],
     products: [
         .library( name: "JsHelper", targets: ["JsHelper"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/JemAlvarez/onboarder", branch: "master")
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "JsHelper",
-            dependencies: [.product(name: "Onboarder", package: "onboarder")],
+            dependencies: [],
             resources: [
                 .process("Docs/SwiftLint.md"),
                 .process("Docs/Fonts.md"),
